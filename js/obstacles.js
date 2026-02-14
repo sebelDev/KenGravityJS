@@ -19,13 +19,19 @@ export class Spikes extends Obstacle {
             {x: player.x - player.width / 2, y: player.y - player.height / 2},
         ]
 
-        for (var i = 0; i < points.length, i++) {
+        for (var i = 0; i < points.length; i++) {
             if (this.rect_has_point(this.x, this.y, this.width, this.height, points[i])) {
                 return true
             }
         }
 
         return false
+    }
+
+    draw(deltaTime, time) {
+
+        this.ctx.fillStyle = "red"
+        this.ctx.fillRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height)
     }
 
 }
